@@ -43,33 +43,33 @@ app.post('/books', async (request, response) => {
 });
 
 // Route for Get All Books from database
-// router.get('/', async (request, response) => {
-//   try {
-//     const books = await Book.find({});
+app.get('/books', async (request, response) => {
+  try {
+    const books = await Book.find({});
 
-//     return response.status(200).json({
-//       count: books.length,
-//       data: books,
-//     });
-//   } catch (error) {
-//     console.log(error.message);
-//     response.status(500).send({ message: error.message });
-//   }
-// });
+    return response.status(200).json({
+      count: books.length,
+      data: books,
+    });
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
 
 // // Route for Get One Book from database by id
-// router.get('/:id', async (request, response) => {
-//   try {
-//     const { id } = request.params;
+app.get('/books/:id', async (request, response) => {
+  try {
+    const { id } = request.params;
 
-//     const book = await Book.findById(id);
+    const book = await Book.findById(id);
 
-//     return response.status(200).json(book);
-//   } catch (error) {
-//     console.log(error.message);
-//     response.status(500).send({ message: error.message });
-//   }
-// });
+    return response.status(200).json(book);
+  } catch (error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
 
 // // Route for Update a Book
 // router.put('/:id', async (request, response) => {
