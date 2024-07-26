@@ -30,23 +30,19 @@ const Home = () => {
   return (
     <div className='p-4'>
       <div className='flex justify-center items-center gap-x-4'>
-        <button
-          className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
-          onClick={() => setShowType('table')}
+        <select
+          className='bg-sky-100 hover:bg-sky-300 px-8 py-4 rounded-md'
+          value={showType}
+          onChange={(e) => setShowType(e.target.value)}
         >
-          Table
-        </button>
-        <button
-          className='bg-sky-300 hover:bg-sky-600 px-4 py-1 rounded-lg'
-          onClick={() => setShowType('card')}
-        >
-          Card
-        </button>
+          <option value='table'>Table View</option>
+          <option value='card'>Card View</option>
+        </select>
       </div>
       <div className='flex justify-between items-center'>
         <h1 className='text-3xl my-8'>Books List</h1>
         <Link to='/books/create'>
-          <MdOutlineAddBox className='text-sky-800 text-4xl' />
+          <MdOutlineAddBox className='text-blue-700 text-6xl' />
         </Link>
       </div>
       {loading ? (
