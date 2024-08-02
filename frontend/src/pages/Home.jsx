@@ -6,6 +6,7 @@ import { MdOutlineAddBox } from 'react-icons/md';
 import BooksTable from '../components/home/BooksTable';
 import BooksCard from '../components/home/BooksCard';
 import Footer from '../components/Footer';
+import Navbar from '../components/home/NavBar';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -27,6 +28,8 @@ const Home = () => {
   }, []);
 
   return (
+<>
+    <Navbar/>
     <div className='flex flex-col min-h-screen'>
       <div className='flex-grow p-4'>
         <div className='flex justify-center items-center gap-x-4'>
@@ -55,7 +58,7 @@ const Home = () => {
       </div>
       <Footer />
     </div>
+</>
   );
 };
-
 export default Home;
