@@ -11,7 +11,7 @@ const BookSingleCard = ({ book }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className='border-1 shadow-lg border-gray-700 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
+    <div className='border shadow-lg border-gray-700 rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
       <h2 className='absolute top-1 right-2 px-4 py-1 bg-blue-400 rounded-lg'>
         {book.publishYear}
       </h2>
