@@ -27,3 +27,19 @@ Alejandro S. (Mexico, DF)
 &iexcl;Qu&eacute; descubrimiento! Mucha gente que conozco, inclu&iacute;da yo, necesita desesperadamente una herramienta como Simon Decide porque aunque sabemos c&oacute;mo buscar opciones no sabemos c&oacute;mo decidirnos por estas. Entonces pensamos, dudamos y volvemos a pensar hasta cuando alguien nos dice: "&iexcl;Ya, toma una decisi&oacute;n!" Bueno, pues esos momentos, por suerte, ya terminaron.
 Amy M. (Santa Monica, CA)
 
+How this guarantees no more NOT-NULL errors
+
+    Step 1 rejects any source row with missing goal or alternative FKs.
+
+    Step 2 rejects any clone that can’t remap its alternative id.
+
+    Step 3 force-copies the goal id onto the clone and re-checks it; if
+    it’s still nil/0 we skip the insert.
+
+    Step 4 remaps checkbox lists only with alternatives that exist in
+    alt_map, removing any stray ids.
+
+With these guards in place, every INSERT uses valid foreign keys, so
+lsd_goals_id and lsd_decisionalternatives_id NOT-NULL constraints are
+never violated again.
+
