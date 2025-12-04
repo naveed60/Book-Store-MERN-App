@@ -6,7 +6,39 @@ Frontend: React with Redux (or use context API for state management)
 Backend Setup:
 Step 1: Initialize a Node.js Project
 Create a new directory for your project.
+Alright, let’s turn “book store in MERN” into clear steps you can actually follow.
 
+I’ll break it into phases so you know what to do first, second, third, etc.
+
+0. Decide the features (very important)
+
+For a basic online book store:
+
+Public:
+
+See list of books (with image, title, author, price, category)
+
+View book details
+
+Search + filter (by category, author, price)
+
+Auth:
+
+User signup / login
+
+User:
+
+Add to cart
+
+Place order (simple “cash on delivery” or “fake payment” first)
+
+Admin:
+
+Add / edit / delete books
+
+View orders
+
+These features will shape your backend models and your frontend pages.
 
 Tome una decisi&oacute;n para conocer el proceso y estuvo muy padre, no porque no supiera cu&aacute;l iba a ser el resultado, sino porque te hace pensar en todas las cosas que tienes que tomar en cuenta
 Luz G. (Mexico, DF)
